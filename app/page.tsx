@@ -187,7 +187,7 @@ export default function Portfolio() {
       tech: ["React", "express.js", "mongodb", "node.js", "FastAPI"],
       github: "https://github.com/AbgaCoder123/helia.frontend",
       live: "https://helia-frontend.vercel.app",
-      category: "AI/ML",
+      category: "Web development",
       featured: true,
     },
     {
@@ -354,10 +354,19 @@ export default function Portfolio() {
 
     try {
       await emailjs.sendForm(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        "service_jo1pd2n", // Replace with your EmailJS service ID
+        "template_aam9eb3", // Replace with your EmailJS template ID
         formRef.current,
-        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+        "bJOQz1sriUkWs6Ion" // Replace with your EmailJS public key
+      );
+      await emailjs.send(
+        "service_jo1pd2n",
+        "template_qscf3bf", // Different template for you
+        {
+          user_email: formRef.current.email.value,
+          email: "bernardgodsgift@gmail.com",
+        },
+        "bJOQz1sriUkWs6Ion"
       );
       setSubmitStatus("success");
       formRef.current.reset();
@@ -393,7 +402,14 @@ export default function Portfolio() {
       },
     },
   };
-
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/bernard godsgift resume.pdf";
+    link.download = "Bernard_Dev_Resume.pdf"; // The filename you want
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   const themeClasses = isDarkMode
     ? "bg-gradient-to-br from-gray-900 via-black to-gray-900"
     : "bg-gradient-to-br from-gray-50 via-white to-gray-100";
@@ -614,7 +630,11 @@ export default function Portfolio() {
           isDarkMode ? "bg-[#1f222a]" : "bg-[#f6f8fb]"
         } ${textColor} `}
       >
-        <section className="w-full max-w-7xl mt-8 px-4 min-h-screen font-bold  max-md:flex-col flex items-center max-[360px]:gap-5  justify-center md:justify-between mx-auto md:overflow-hidden">
+        <section
+          className="w-full max-w-7xl mt-8 px-4 min-h-screen font-bold  max-md:flex-col flex items-center max-[360px]:gap-5  justify-center md:justify-between mx-auto md:overflow-hidden"
+          id="hero"
+          ref={heroRef}
+        >
           <div
             className="flex gap-5 flex-col justify-center max-md:order-2 w-full md:w-[60%]"
             data-aos="fade-right"
@@ -663,6 +683,7 @@ export default function Portfolio() {
                 <Button
                   size={"lg"}
                   className="h-[50px] font-bold w-full  bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0"
+                  onClick={() => scrollToSection("contact")}
                 >
                   Contact Me
                 </Button>
@@ -675,6 +696,7 @@ export default function Portfolio() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Button
+                  onClick={() => scrollToSection("about")}
                   size={"lg"}
                   variant="outline"
                   className={`h-[50px] w-full  font-bold ${
@@ -897,7 +919,10 @@ export default function Portfolio() {
                   </div>
 
                   <motion.div className="mt-8" whileHover={{ scale: 1.02 }}>
-                    <Button className="w-full h-[50px] text-sm bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0 py-4  font-medium">
+                    <Button
+                      className="w-full h-[50px] text-sm bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0 py-4  font-medium"
+                      onClick={() => handleDownload()}
+                    >
                       <Download className="w-5 h-5 mr-2" />
                       Download Resume
                     </Button>
@@ -1644,19 +1669,19 @@ function ContactInfo({ isDarkMode }: { isDarkMode: boolean }) {
               {
                 icon: Mail,
                 label: "Email",
-                value: "john.doe@example.com",
-                href: "mailto:john.doe@example.com",
+                value: "bernardgodsgift@gmail.com",
+                href: "mailto:bernardgodsgift@gmail.com",
               },
               {
                 icon: Phone,
                 label: "Phone",
-                value: "+1 (555) 123-4567",
-                href: "tel:+15551234567",
+                value: "+234 810 861 8234",
+                href: "tel:+234 810 861 8234",
               },
               {
                 icon: MapPin,
                 label: "Location",
-                value: "San Francisco, CA",
+                value: "Lagos, Nigeria",
                 href: "#",
               },
             ].map((item, index) => (
@@ -1853,7 +1878,7 @@ function ContactForm({
                     ? "bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-green-500"
                     : "bg-white/50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-green-500"
                 } transition-colors h-12`}
-                placeholder="john.doe@example.com"
+                placeholder="bernardgodsgift@gmail.com"
               />
             </motion.div>
 
