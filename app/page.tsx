@@ -823,7 +823,7 @@ export default function Portfolio() {
               <Card
                 className={`backdrop-blur-xl ${cardBg} ${textColor} shadow-2xl`}
               >
-                <CardContent className="p-10">
+                <CardContent className="p-5 sm:p-10">
                   <h3
                     className={`text-3xl font-bold mb-6 bg-gradient-to-r ${
                       isDarkMode
@@ -1628,7 +1628,7 @@ function ContactInfo({ isDarkMode }: { isDarkMode: boolean }) {
             : "bg-white/80 border-gray-200/50 text-gray-900"
         } h-full`}
       >
-        <CardContent className="p-10">
+        <CardContent className="p-5 sm:p-10">
           <h3
             className={`text-3xl font-bold mb-8 bg-gradient-to-r ${
               isDarkMode
@@ -1767,7 +1767,7 @@ function ContactForm({
             : "bg-white/80 border-gray-200/50 text-gray-900"
         } h-full`}
       >
-        <CardContent className="p-10">
+        <CardContent className="p-5 sm:p-10">
           <h3
             className={`text-3xl font-bold mb-8 bg-gradient-to-r ${
               isDarkMode
