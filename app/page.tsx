@@ -183,10 +183,10 @@ export default function Portfolio() {
       title: "AI-Powered Analytics Dashboard",
       description:
         "Advanced analytics platform with machine learning insights, real-time data visualization, and predictive analytics.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://helia-frontend.vercel.app/app_preview.png",
       tech: ["React", "Python", "TensorFlow", "D3.js", "FastAPI"],
-      github: "https://github.com/johndoe/ai-dashboard",
-      live: "https://ai-dashboard-demo.vercel.app",
+      github: "https://github.com/AbgaCoder123/helia.frontend",
+      live: "https://helia-frontend.vercel.app",
       category: "AI/ML",
       featured: true,
     },
