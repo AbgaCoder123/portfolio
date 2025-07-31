@@ -610,7 +610,7 @@ export default function Portfolio() {
       {/* Hero Section */}
 
       <div
-        className={`min-h-screen w-full max-sm:px-5 max-sm:py-10 ${
+        className={`min-h-screen w-full max-sm:px-5 max-[400px]:pt-[72px] max-[400px]:pb-[72px] ${
           isDarkMode ? "bg-[#1f222a]" : "bg-[#f6f8fb]"
         } ${textColor} `}
       >
