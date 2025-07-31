@@ -180,7 +180,7 @@ export default function Portfolio() {
       featured: true,
     },
     {
-      title: "AI-Powered Analytics Dashboard",
+      title: "Helia, Hotel Booking App",
       description:
         "Helia is a sleek hotel booking web app that simplifies reservations with a modern UI.",
       image: "https://helia-frontend.vercel.app/app_preview.png",
