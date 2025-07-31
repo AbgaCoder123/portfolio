@@ -614,7 +614,7 @@ export default function Portfolio() {
           isDarkMode ? "bg-[#1f222a]" : "bg-[#f6f8fb]"
         } ${textColor} `}
       >
-        <section className="w-full max-w-7xl mt-8 px-4 h-screen font-bold  max-md:flex-col flex items-center max-[360px]:gap-5  justify-center md:justify-between mx-auto md:overflow-hidden">
+        <section className="w-full max-w-7xl mt-8 px-4 min-h-screen font-bold  max-md:flex-col flex items-center max-[360px]:gap-5  justify-center md:justify-between mx-auto md:overflow-hidden">
           <div
             className="flex gap-5 flex-col justify-center max-md:order-2 w-full md:w-[60%]"
             data-aos="fade-right"
@@ -629,10 +629,10 @@ export default function Portfolio() {
                   <Hand />
                 </span>
               </div>
-              <div className={`text-3xl md:text-6xl  max-md:text-center `}>
+              <div className={`text-2xl md:text-6xl  max-md:text-center `}>
                 I'm Bernard
               </div>
-              <div className="text-3xl md:text-6xl max-md:text-center">
+              <div className="text-2xl md:text-6xl max-md:text-center">
                 a{" "}
                 <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent font-bold">
                   {" "}
