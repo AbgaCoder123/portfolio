@@ -169,17 +169,6 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description:
-        "A full-stack e-commerce solution with modern UI, real-time inventory, and seamless payment integration.",
-      image: "/placeholder.svg?height=400&width=600",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "PostgreSQL"],
-      github: "https://github.com/johndoe/ecommerce-platform",
-      live: "https://ecommerce-demo.vercel.app",
-      category: "Web Development",
-      featured: true,
-    },
-    {
       title: "Helia, Hotel Booking App",
       description:
         "Helia is a sleek hotel booking web app that simplifies reservations with a modern UI.",
@@ -189,83 +178,6 @@ export default function Portfolio() {
       live: "https://helia-frontend.vercel.app",
       category: "Web development",
       featured: true,
-    },
-    {
-      title: "Mobile Banking Application",
-      description:
-        "Secure mobile banking app with biometric authentication, real-time transactions, and advanced security features.",
-      image: "/placeholder.svg?height=400&width=600",
-      tech: ["React Native", "Node.js", "MongoDB", "JWT", "Stripe"],
-      github: "https://github.com/johndoe/mobile-banking",
-      live: "https://banking-app-demo.vercel.app",
-      category: "Mobile",
-      featured: false,
-    },
-    {
-      title: "Social Media Platform",
-      description:
-        "Modern social networking platform with real-time messaging, content sharing, and advanced privacy controls.",
-      image: "/placeholder.svg?height=400&width=600",
-      tech: ["Vue.js", "Express.js", "Socket.io", "Redis", "AWS"],
-      github: "https://github.com/johndoe/social-platform",
-      live: "https://social-demo.vercel.app",
-      category: "Web Development",
-      featured: false,
-    },
-    {
-      title: "IoT Smart Home System",
-      description:
-        "Comprehensive smart home automation system with voice control, energy monitoring, and security features.",
-      image: "/placeholder.svg?height=400&width=600",
-      tech: ["React", "Node.js", "MQTT", "InfluxDB", "Raspberry Pi"],
-      github: "https://github.com/johndoe/smart-home",
-      live: "https://smarthome-demo.vercel.app",
-      category: "IoT",
-      featured: false,
-    },
-    {
-      title: "Blockchain Voting System",
-      description:
-        "Secure and transparent voting platform built on blockchain technology with end-to-end encryption.",
-      image: "/placeholder.svg?height=400&width=600",
-      tech: ["Solidity", "Web3.js", "React", "Ethereum", "IPFS"],
-      github: "https://github.com/johndoe/blockchain-voting",
-      live: "https://voting-demo.vercel.app",
-      category: "Blockchain",
-      featured: false,
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Collaborative task management application with real-time updates, team collaboration, and project tracking.",
-      image: "/placeholder.svg?height=400&width=600",
-      tech: ["React", "Node.js", "Socket.io", "MongoDB", "JWT"],
-      github: "https://github.com/johndoe/task-manager",
-      live: "https://taskmanager-demo.vercel.app",
-      category: "Web Development",
-      featured: false,
-    },
-    {
-      title: "Weather Forecast App",
-      description:
-        "Beautiful weather application with detailed forecasts, interactive maps, and location-based alerts.",
-      image: "/placeholder.svg?height=400&width=600",
-      tech: ["React Native", "OpenWeather API", "Redux", "Expo"],
-      github: "https://github.com/johndoe/weather-app",
-      live: "https://weather-demo.vercel.app",
-      category: "Mobile",
-      featured: false,
-    },
-    {
-      title: "Portfolio Website Builder",
-      description:
-        "Drag-and-drop portfolio builder with customizable templates, SEO optimization, and analytics integration.",
-      image: "/placeholder.svg?height=400&width=600",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Vercel"],
-      github: "https://github.com/johndoe/portfolio-builder",
-      live: "https://portfolio-builder-demo.vercel.app",
-      category: "Web Development",
-      featured: false,
     },
   ];
 
