@@ -265,10 +265,19 @@ export default function Portfolio() {
     setSubmitStatus("idle");
 
     try {
+      await emailjs.sendForm(
+        "service_jo1pd2n", // Replace with your EmailJS service ID
+        "template_aam9eb3", // Replace with your EmailJS template ID
+        formRef.current,
+        "bJOQz1sriUkWs6Ion" // Replace with your EmailJS public key
+      );
       await emailjs.send(
         "service_jo1pd2n",
         "template_qscf3bf", // Different template for you
-        formRef.current,
+        {
+          user_email: formRef.current.email.value,
+          email: "bernardgodsgift@gmail.com",
+        },
         "bJOQz1sriUkWs6Ion"
       );
       setSubmitStatus("success");
