@@ -265,19 +265,10 @@ export default function Portfolio() {
     setSubmitStatus("idle");
 
     try {
-      await emailjs.sendForm(
-        "service_jo1pd2n", // Replace with your EmailJS service ID
-        "template_aam9eb3", // Replace with your EmailJS template ID
-        formRef.current,
-        "bJOQz1sriUkWs6Ion" // Replace with your EmailJS public key
-      );
       await emailjs.send(
         "service_jo1pd2n",
         "template_qscf3bf", // Different template for you
-        {
-          user_email: formRef.current.email.value,
-          email: "bernardgodsgift@gmail.com",
-        },
+        formRef.current,
         "bJOQz1sriUkWs6Ion"
       );
       setSubmitStatus("success");
@@ -669,7 +660,11 @@ export default function Portfolio() {
         </section>
       </div>
       {/* About Section */}
-      <section id="about" ref={aboutRef} className="py-32 px-4 relative">
+      <section
+        id="about"
+        ref={aboutRef}
+        className="py-20 sm:py-32 px-4 relative"
+      >
         <motion.div style={{ y: aboutY }} className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -757,7 +752,7 @@ export default function Portfolio() {
               <Card
                 className={`backdrop-blur-xl ${cardBg} ${textColor} shadow-2xl`}
               >
-                <CardContent className="p-5 sm:p-10">
+                <CardContent className="p-5 py-10 sm:p-10">
                   <h3
                     className={`text-3xl font-bold mb-6 bg-gradient-to-r ${
                       isDarkMode
@@ -847,7 +842,11 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" ref={skillsRef} className="py-32 px-4 relative">
+      <section
+        id="skills"
+        ref={skillsRef}
+        className="py-20 sm:py-32 px-4 relative"
+      >
         <motion.div
           style={{ rotateX: skillsRotate }}
           className="max-w-7xl mx-auto"
@@ -891,7 +890,7 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-32 px-4 relative">
+      <section id="projects" className="py-20 sm:py-32 px-4 relative">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -994,7 +993,7 @@ export default function Portfolio() {
       {/* Testimonials Section with Multi-Column Vertical Marquee */}
       <section
         id="testimonials"
-        className="py-32 px-4 relative overflow-hidden"
+        className="py-20 sm:py-32 px-4 relative overflow-hidden"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -1023,7 +1022,7 @@ export default function Portfolio() {
           </motion.div>
 
           {/* Multi-Column Vertical Marquee */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 h-[700px] overflow-hidden">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 h-[1000px] sm:h-[700px] overflow-hidden">
             {/* Top gradient shadow */}
             <div
               className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${
@@ -1141,7 +1140,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 px-4 relative">
+      <section id="contact" className="py-20 sm:py-32 px-4 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -1172,7 +1171,7 @@ export default function Portfolio() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="sm:grid lg:grid-cols-2  gap-16">
             <ContactInfo isDarkMode={isDarkMode} />
             <ContactForm
               formRef={formRef}
@@ -1271,8 +1270,8 @@ export default function Portfolio() {
             } pt-8 text-center`}
           >
             <p className={isDarkMode ? "text-white/40" : "text-gray-500"}>
-              © {new Date().getFullYear()} John Doe. All rights reserved.
-              Crafted with ❤️ using Next.js and Tailwind CSS.
+              © {new Date().getFullYear()} Bernard Godsgift. All rights
+              reserved. Crafted with ❤️ using Next.js and Tailwind CSS.
             </p>
           </div>
         </div>
@@ -1559,13 +1558,13 @@ function ContactInfo({ isDarkMode }: { isDarkMode: boolean }) {
       viewport={{ once: true }}
     >
       <Card
-        className={`backdrop-blur-xl ${
+        className={`backdrop-blur-xl max-sm:mb-10 ${
           isDarkMode
             ? "bg-white/5 border-white/10 text-white"
             : "bg-white/80 border-gray-200/50 text-gray-900"
         } h-full`}
       >
-        <CardContent className="p-5 sm:p-10">
+        <CardContent className="p-5 py-10 sm:p-10">
           <h3
             className={`text-3xl font-bold mb-8 bg-gradient-to-r ${
               isDarkMode
@@ -1622,7 +1621,7 @@ function ContactInfo({ isDarkMode }: { isDarkMode: boolean }) {
                   >
                     {item.label}
                   </p>
-                  <p className="text-lg font-medium">{item.value}</p>
+                  <p className="text-sm sm:text-lg font-medium">{item.value}</p>
                 </div>
               </motion.a>
             ))}
@@ -1704,7 +1703,7 @@ function ContactForm({
             : "bg-white/80 border-gray-200/50 text-gray-900"
         } h-full`}
       >
-        <CardContent className="p-5 sm:p-10">
+        <CardContent className="p-5 py-10 sm:p-10">
           <h3
             className={`text-3xl font-bold mb-8 bg-gradient-to-r ${
               isDarkMode
@@ -1790,7 +1789,8 @@ function ContactForm({
                     ? "bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-green-500"
                     : "bg-white/50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-green-500"
                 } transition-colors h-12`}
-                placeholder="bernardgodsgift@gmail.com"
+                disabled
+                defaultValue="bernardgodsgift@gmail.com"
               />
             </motion.div>
 
