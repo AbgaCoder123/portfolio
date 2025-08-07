@@ -48,7 +48,14 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
-
+const handleDownload = () => {
+  const link = document.createElement("a");
+  link.href = "/bernard godsgift resume.pdf";
+  link.download = "Bernard_Dev_Resume.pdf"; // The filename you want
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
@@ -265,22 +272,16 @@ export default function Portfolio() {
     setSubmitStatus("idle");
 
     try {
+      console.log(formRef.current);
       await emailjs.sendForm(
         "service_jo1pd2n", // Replace with your EmailJS service ID
-        "template_aam9eb3", // Replace with your EmailJS template ID
+        "template_01p5r3e", // Replace with your EmailJS template ID
         formRef.current,
         "bJOQz1sriUkWs6Ion" // Replace with your EmailJS public key
       );
-      await emailjs.send(
-        "service_jo1pd2n",
-        "template_qscf3bf", // Different template for you
-        {
-          user_email: formRef.current.email.value,
-          email: "bernardgodsgift@gmail.com",
-        },
-        "bJOQz1sriUkWs6Ion"
-      );
+
       setSubmitStatus("success");
+      console.log(formRef.current);
       formRef.current.reset();
     } catch (error) {
       console.error("EmailJS error:", error);
@@ -314,14 +315,7 @@ export default function Portfolio() {
       },
     },
   };
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/bernard godsgift resume.pdf";
-    link.download = "Bernard_Dev_Resume.pdf"; // The filename you want
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
   const themeClasses = isDarkMode
     ? "bg-gradient-to-br from-gray-900 via-black to-gray-900"
     : "bg-gradient-to-br from-gray-50 via-white to-gray-100";
@@ -1215,10 +1209,18 @@ export default function Portfolio() {
                 Creating digital experiences that inspire and innovate.
               </p>
               <div className="flex space-x-4">
-                {[Github, Linkedin, Mail].map((Icon, index) => (
+                {[
+                  { icon: Github, href: "https://github.com/AbgaCoder123" },
+                  {
+                    icon: Linkedin,
+                    href: "https://www.linkedin.com/in/grace-studios-ab19632ab/",
+                  },
+                  { icon: Mail, href: "mailto:bernardgodsgift@gmail.com" },
+                ].map((Icon, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href={Icon.href}
+                    target="_blank"
                     className={`w-10 h-10 ${
                       isDarkMode ? "bg-white/10" : "bg-gray-200/50"
                     } rounded-full flex items-center justify-center ${
@@ -1229,7 +1231,7 @@ export default function Portfolio() {
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon.icon className="w-5 h-5" />
                   </motion.a>
                 ))}
               </div>
@@ -1640,13 +1642,26 @@ function ContactInfo({ isDarkMode }: { isDarkMode: boolean }) {
             <h4 className="text-xl font-semibold mb-6">Follow Me</h4>
             <div className="flex space-x-4">
               {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "#", label: "Email" },
+                {
+                  icon: Github,
+                  href: "https://github.com/AbgaCoder123",
+                  label: "GitHub",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/grace-studios-ab19632ab/",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: Mail,
+                  href: "mailto:bernardgodsgift@gmail.com",
+                  label: "Email",
+                },
               ].map((social, index) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
                   className={`w-12 h-12 ${
                     isDarkMode ? "bg-white/10" : "bg-gray-200/50"
                   } rounded-2xl flex items-center justify-center ${
@@ -1673,7 +1688,10 @@ function ContactInfo({ isDarkMode }: { isDarkMode: boolean }) {
             transition={{ delay: 0.25, duration: 0.2 }}
             viewport={{ once: true }}
           >
-            <Button className="w-full bg-gradient-to-r h-[50px] text-sm from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0 py-4  font-medium shadow-2xl shadow-green-500/25">
+            <Button
+              className="w-full bg-gradient-to-r h-[50px] text-sm from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0 py-4  font-medium shadow-2xl shadow-green-500/25"
+              onClick={() => handleDownload()}
+            >
               <Download className="w-5 h-5 mr-2" />
               Download Resume
             </Button>
@@ -1798,8 +1816,7 @@ function ContactForm({
                     ? "bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-green-500"
                     : "bg-white/50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-green-500"
                 } transition-colors h-12`}
-                disabled
-                defaultValue="bernardgodsgift@gmail.com"
+                placeholder="example@gmail.com"
               />
             </motion.div>
 
