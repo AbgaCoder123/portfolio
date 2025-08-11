@@ -799,7 +799,7 @@ export default function Portfolio() {
                     >
                       <Award className="w-8 h-8 mx-auto mb-2 text-green-400" />
                       <div className={`text-2xl font-bold ${textColor}`}>
-                        150+
+                        10+
                       </div>
                       <div
                         className={`text-sm ${
@@ -816,7 +816,7 @@ export default function Portfolio() {
                     >
                       <Users className="w-8 h-8 mx-auto mb-2 text-emerald-400" />
                       <div className={`text-2xl font-bold ${textColor}`}>
-                        80+
+                        8+
                       </div>
                       <div
                         className={`text-sm ${
