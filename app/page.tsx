@@ -649,7 +649,7 @@ export default function Portfolio() {
             </div>
             <img
               src="/me2.png"
-              className="object-scale-down w-[500px] h-[calc(100vh-88px)] max-md:hidden -translate-x-16 scale-[1.45]"
+              className="object-scale-down w-[500px] h-[calc(100vh-18px)] max-md:hidden -translate-x-16 translate-y-16 scale-[1.7]"
               alt=""
             />
             <div className="w-[300px] h-[300px] max-[360px]:w-[250px] max-[360px]:h-[250px] rounded-full border-4 border-green-500 md:hidden overflow-clip">
