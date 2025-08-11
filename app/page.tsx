@@ -1028,19 +1028,15 @@ export default function Portfolio() {
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 h-[1000px] sm:h-[700px] overflow-hidden">
             {/* Top gradient shadow */}
             <div
-              className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${
-                isDarkMode
-                  ? "from-gray-900 via-gray-900/80 to-transparent"
-                  : "from-gray-50 via-gray-50/80 to-transparent"
+              className={`absolute top-0 left-0 right-0 h-32  ${
+                isDarkMode ? "" : ""
               } z-10 pointer-events-none`}
             />
 
             {/* Bottom gradient shadow */}
             <div
-              className={`absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t ${
-                isDarkMode
-                  ? "from-gray-900 via-gray-900/80 to-transparent"
-                  : "from-gray-50 via-gray-50/80 to-transparent"
+              className={`absolute bottom-0 left-0 right-0 h-32  ${
+                isDarkMode ? "" : ""
               } z-10 pointer-events-none`}
             />
 
